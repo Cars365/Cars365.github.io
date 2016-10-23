@@ -26,6 +26,10 @@ Helper classes to take care of the basic margin padding stuff
     padding-top: 45px;
 }
 
+.padding-bottom-1 {
+    padding-bottom: 15px;
+}
+
 body {
     background: url(../images/cars.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
