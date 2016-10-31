@@ -17,6 +17,10 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel = "stylesheet" href = "css/jquery.typeahead.css">
+    <script type = "text/javascript" src = "js/jquery.typeahead.js"></script>
+    <script type = "text/javascript" src = "js/main.js"></script>
 </head>
 <body>
 <div class="container-fluid">
@@ -42,7 +46,20 @@
             <h2>Best Car Deals in Delhi - NCR, India</h2>
         </div>
     </div>
-
+    <form id="Cars" name="Cars">
+        <div class="typeahead__container">
+            <div class="typeahead__field">
+                <span class="typeahead__query">
+                    <input class="js-typeahead-car_v1" name="car_v1[query]" type="search" placeholder="Search" autocomplete="off">
+                </span>
+                <span class="typeahead__button">
+                    <button type="submit">
+                        <i class="typeahead__search-icon"></i>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </form>
     <div class="row">
         <div class="col-xs-12 text-center padding-top-2">
             Get in touch, today, for best offers of the cars of your choice...
@@ -68,7 +85,7 @@
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
