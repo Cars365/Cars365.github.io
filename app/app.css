@@ -1,0 +1,258 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li + li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+
+oi-select {
+	width: 200px;
+  color: #333;
+}
+
+oi-select li {
+	text-align: left;
+}
+
+.phoneField{
+    border-radius: 4px;
+    height: 36px;
+    text-align: left;
+    padding-left: 4px;
+}
+
+
+/*
+Helper classes to take care of the basic margin padding stuff
+*/
+
+.padding-left-1 {
+  padding-left: 15px;
+}
+
+.padding-left-2 {
+    padding-left: 30px;
+}
+
+.padding-right-2 {
+    padding-right: 30px;
+}
+
+.padding-top-1 {
+    padding-top: 15px;
+}
+
+.padding-top-2 {
+    padding-top: 30px;
+}
+
+.padding-top-3 {
+    padding-top: 45px;
+}
+
+.padding-bottom-1 {
+    padding-bottom: 15px;
+}
+
+body {
+    background: url(images/cars.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /*color: #fff;*/
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    color: #fff;
+}
+
+a:hover {
+    color: #e5e5e5;
+}
+
+.width-400 {
+    width: 400px !important;
+}
+
+.btn-flat {
+    border-radius: 0;
+}
+
+.btn-fb {
+    background-color: #3A589B;
+    color: #fff;
+}
+.btn-fb:hover {
+    background-color: #2d2f5f;
+    color: #fff;
+}
+
+.btn-twitter {
+    background-color: #32CCFE;
+}
+
+.btn-twitter:hover {
+    background-color: #1e94b2;
+    color: #fff;
+}
+
+.home-cover {
+  /*background: url(images/cars.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;*/
+  color: #fff;
+}
+
+.footer {
+  color: #fff;
+}
+
+/*320px
+480px
+600px
+768px
+900px
+1024px*/
+
+@media screen and (max-width:1200px) and (min-width: 1025px){
+
+  oi-select{
+      width: 155px ;
+  }
+  .form-control.phoneField{
+    width: 155px ;
+  }
+}
+
+@media screen and (max-width:1024px) and (min-width: 901px){
+  .container-fluid.text-center{
+    width: 100% !important;
+  }
+
+  oi-select{
+      width: 120px !important;
+  }
+  .phoneField{
+    width: 120px ;
+  }
+}
+
+@media screen and (max-width: 900px) and (min-width: 769px){
+  .container-fluid.text-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100% !important;
+  }
+
+  oi-select{
+      width: 100px ;
+  }
+  .form-control.phoneField{
+    width: 115px;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 601px) {
+
+    .lead-form .form-group {
+      display: block;
+      margin: 7px auto;
+      width: 500px;
+    }
+    .container-fluid.text-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100% !important;
+    }
+
+    .border.col-md-6.copyright{
+      text-align: center;
+    }
+
+    .border.col-md-6.footer-links{
+      text-align: center;
+    }
+
+    oi-select{
+        width: 100%;
+    }
+    .form-control.phoneField{
+      width: 500px ;
+    }
+}
+
+@media screen and (max-width: 600px) and (min-width: 481px) {
+  .container-fluid.text-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .border.col-md-6.copyright{
+    text-align: center;
+  }
+  .border.col-md-6.footer-links{
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) and (min-width: 321px) {
+  .container-fluid.text-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .phoneField{
+    width: 200px ;
+  }
+
+  .border.col-md-6.copyright{
+    text-align: center;
+  }
+
+  .border.col-md-6.footer-links{
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 320px) and (min-width: 59px) {
+  .container.text-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .border.col-md-6.copyright{
+    text-align: center;
+  }
+
+  .border.col-md-6.footer-links{
+    text-align: center;
+  }
+}
