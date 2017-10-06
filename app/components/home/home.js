@@ -13,6 +13,15 @@ angular.module('cars365.home', ['ngRoute', 'oi.select'])
 	$scope.data = DataService;
 	$scope.car = {};
 
+  $scope.kms = [
+    '10,000 KM',
+    '10,000 - 20,000 KM',
+    '20,000 - 40,000 KM',
+    '40,000 - 60,000 KM',
+    '60,000 - 80,000 KM',
+    '80,000 - 1,00,000 KM',
+    'Above 1,00,000 KM',
+  ];
 
 
 	$scope.changeBrand = function(){
@@ -67,6 +76,7 @@ angular.module('cars365.home', ['ngRoute', 'oi.select'])
       }, function errorCallback(response) {
         // called asynchronously if an error occurs
         // or server returns response with an error status.
+        console.error(error);
         alert(response);
       });
 
