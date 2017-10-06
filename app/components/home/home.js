@@ -23,6 +23,17 @@ angular.module('cars365.home', ['ngRoute', 'oi.select'])
 
 	$scope.changeModel = function(){
 		$scope.years = $scope.models.find(function(x){return x.text === $scope.car.model.text; }).years;
+    console.log($scope.years);
+    // Special case: Add year 2017, and add all the cars of 2016
+    var data2016 = $scope.years.find(function(i){return i.text == '2016'});
+    var data2017 = null;
+    if(data2016){
+      data2017 = angular.copy(data2016);
+      data2017.text = "2017";
+      $scope.years.unshift(data2017);
+    }
+    
+
 		$scope.car.year = $scope.car.variant = null;
 	}
 
@@ -40,7 +51,7 @@ angular.module('cars365.home', ['ngRoute', 'oi.select'])
 
     $http({
       method: 'GET',
-      url: 'backend/notify.php?phone='+$scope.phone+'&brand='+car.brand+'&model='+car.model+'&year='+car.year+'&variant='+car.variant
+      url: 'http://api.cars365.in/notify.php?phone='+$scope.phone+'&brand='+car.brand+'&model='+car.model+'&year='+car.year+'&variant='+car.variant
     }).then(function successCallback(response) {
         // this callback will be called asynchronously
         // when the response is available
