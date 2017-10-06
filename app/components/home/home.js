@@ -53,31 +53,41 @@ angular.module('cars365.home', ['ngRoute', 'oi.select'])
 
 	$scope.submit = function() {
 		var car = {};
-		car.brand = $scope.car.brand.text;
-		car.model = $scope.car.model.text;
-		car.year = $scope.car.year.text;
-		car.variant = $scope.car.variant.text;
+		if($scope.car.brand) car.brand = $scope.car.brand.text;
+		if($scope.car.model) car.model = $scope.car.model.text;
+		if($scope.car.year) car.year = $scope.car.year.text;
+		if($scope.car.variant) car.variant = $scope.car.variant.text;
+    if($scope.car.km) car.km = $scope.car.km;
 
+    $scope.disableSubmit = true;
+
+    var url = 'http://api.cars365.in/notify.php?name='+$scope.name+'&phone='+$scope.phone+'&brand='+car.brand+'&model='+car.model+'&year='+car.year+'&variant='+car.variant+'&km='+car.km;
+    console.log(url);
     $http({
       method: 'GET',
-      url: 'http://api.cars365.in/notify.php?phone='+$scope.phone+'&brand='+car.brand+'&model='+car.model+'&year='+car.year+'&variant='+car.variant
+      url: url
     }).then(function successCallback(response) {
         // this callback will be called asynchronously
         // when the response is available
         // alert(response['success']+ typeof(response.success));
-        console.log(response);
-        if(response.data.success == 1){
-          $scope.showSuccess = true;
-        }
-        else if(response.data.success == '0'){
-          $scope.showEmailFail = true;
+        if(!$scope.leadCaptured){
+          $scope.leadCaptured = true;
+        }else{
+          console.log(response);
+          if(response.data.success == 1){
+            $scope.showSuccess = true;
+          }
+          else if(response.data.success == '0'){
+            $scope.showEmailFail = true;
+          }
         }
 
+        $scope.disableSubmit = false;
       }, function errorCallback(response) {
         // called asynchronously if an error occurs
         // or server returns response with an error status.
         console.error(error);
-        alert(response);
+        $scope.disableSubmit = false;
       });
 
 	}
